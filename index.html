@@ -63,6 +63,10 @@ body {
   margin-left: 10px;
 }
 
+button.login {
+  margin-left: 10px;
+}
+
 /*
  *****************************************************
  * HEADER
@@ -213,7 +217,7 @@ body {
               onChange={handleApiKeyChange}
               placeholder="Enter your API Key"
             />
-            <button type="submit">Save</button>
+            <button className="login" type="submit">Log In</button>
           </form>
         </div>
       );
@@ -262,9 +266,16 @@ body {
       const [gameState, setGameState] = useState('This is a brand new game. Invent an NPC character to act as.');
 
       const startGame = async (apiKey) => {
+        setIsLoading(true);
         setApiKey(apiKey);
-        await npcTurn(chatHistory);
       };
+
+      useEffect(() => {
+        // Start with NPC turn
+        if (apiKey) {
+          npcTurn(chatHistory);
+        }
+      }, [apiKey]);
 
       useEffect(() => {
         const storedApiKey = localStorage.getItem('apiKey');
