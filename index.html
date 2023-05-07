@@ -12,17 +12,61 @@
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
   <script type="text/babel">
-    var App = (props) => {
-            return (
-                <div >
-                    Hello Universe!
-                </div>
-            );
-        };
-        ReactDOM.render(
-            App(),
-            document.getElementById('place-app')
-        );
+import React, { useState, useEffect } from 'react';
+
+const Game = () => {
+  const [apiKey, setApiKey] = useState('');
+
+  useEffect(() => {
+    const storedApiKey = localStorage.getItem('apiKey');
+    if (storedApiKey) {
+      setApiKey(storedApiKey);
+    }
+  }, []);
+
+  const handleApiKeyChange = (event) => {
+    setApiKey(event.target.value);
+  };
+
+  const handleApiKeySubmit = (event) => {
+    event.preventDefault();
+    localStorage.setItem('apiKey', apiKey);
+  };
+
+  return (
+    <div className="container">
+      {!apiKey && (
+        <div className="api-key-section">
+          <h2>Enter API Key</h2>
+          <form onSubmit={handleApiKeySubmit}>
+            <input
+              type="text"
+              value={apiKey}
+              onChange={handleApiKeyChange}
+              placeholder="Enter your API Key"
+            />
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      )}
+      {apiKey && (
+        <div className="game-section">
+          <div className="chat-history">
+            {/* Render chat messages here */}
+          </div>
+          <div className="input-section">
+            <input type="text" placeholder="Type your message" />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+ReactDOM.render(
+    Game(),
+    document.getElementById('place-app')
+);
   </script>
 </body>
 </html>
