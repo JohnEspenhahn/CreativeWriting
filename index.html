@@ -261,10 +261,15 @@ body {
       const [isLoading, setIsLoading] = useState(false);
       const [gameState, setGameState] = useState('This is a brand new game. Invent an NPC character to act as.');
 
+      const startGame = async (apiKey) => {
+        setApiKey(apiKey);
+        await npcTurn(chatHistory);
+      };
+
       useEffect(() => {
         const storedApiKey = localStorage.getItem('apiKey');
         if (storedApiKey) {
-          setApiKey(storedApiKey);
+          startGame(storedApiKey);
         }
       }, []);
 
@@ -286,10 +291,14 @@ body {
           text: message
         };
 
-        let updatedHistory = [...chatHistory, newMessage];
+        const updatedHistory = [...chatHistory, newMessage];
         setChatHistory(updatedHistory);
         setMessage('');
 
+        await npcTurn(updatedHistory);
+      };
+
+      const npcTurn = async (updatedHistory) => {
         setIsLoading(true);
         try {
           const response = await getNPCResponse(updatedHistory);
@@ -400,7 +409,7 @@ ${gameState}
       return (
         <div className="container">
           {!apiKey ? (
-            <APIKeyInput setApiKey={setApiKey} />
+            <APIKeyInput setApiKey={startGame} />
           ) : (
             <div className="game-section">
               <Header onLogout={handleLogout} gameState={gameState} />
