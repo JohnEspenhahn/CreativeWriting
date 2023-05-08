@@ -3,12 +3,35 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>Creative Writing</title>
   <style>
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Add this at the top of your CSS */
+@media screen and (max-width: 767px) {
+  /* Update styles for smaller screens here */
+  
+  /* Header */
+  .header {
+    font-size: 18px; /* Adjust the font size for mobile */
+    padding: 10px; /* Adjust the padding for mobile */
+  }
+
+  /* User Input */
+  .chat-history {
+    font-size: 16px;
+  }
+
+  .input-section {
+    font-size: 16px; /* Adjust the font size for mobile */
+    padding: 10px; /* Adjust the padding for mobile */
+  }
 }
 
 /*
