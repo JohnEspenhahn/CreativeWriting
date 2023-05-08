@@ -361,15 +361,28 @@ The current summary of the game state is:
 
 ${gameState}
 
-Given this sumary and the messages, reply with the next game state summary. But sure to include information about the characters the player has met, the players objectives, and what the player is currently doing.
-`,
-            },
-            ...updatedHistory.map((message) => {
+Messages:
+
+` + JSON.stringify(updatedHistory.map((message) => {
+
               return {
+
                 role: getRole(message.sender),
+
                 content: message.text,
+
               };
-            }),
+
+})) + `
+Given the current summary and messages, reply with the next game state summary. You must include the following sections: 
+a list of the characters the player has met with a summary of the character and their goals.
+
+The players objectives. 
+
+What the player is currently doing.`
+
+            },
+
           ]);
       };
 
