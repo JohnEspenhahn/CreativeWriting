@@ -7,197 +7,221 @@
 
   <title>Creative Writing</title>
   <style>
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Add this at the top of your CSS */
-@media screen and (max-width: 767px) {
-  /* Update styles for smaller screens here */
-  
-  /* Header */
-  .header {
-    font-size: 18px; /* Adjust the font size for mobile */
-    padding: 10px; /* Adjust the padding for mobile */
-  }
+    /* Add this at the top of your CSS */
+    @media screen and (max-width: 767px) {
+      /* Update styles for smaller screens here */
 
-  /* User Input */
-  .chat-history {
-    font-size: 16px;
-  }
+      /* Header */
+      .header {
+        font-size: 18px;
+        /* Adjust the font size for mobile */
+        padding: 10px;
+        /* Adjust the padding for mobile */
+      }
 
-  .input-section {
-    font-size: 16px; /* Adjust the font size for mobile */
-    padding: 10px; /* Adjust the padding for mobile */
-  }
-}
+      /* User Input */
+      .chat-history {
+        font-size: 16px;
+      }
 
-/*
+      .input-section {
+        font-size: 16px;
+        /* Adjust the font size for mobile */
+        padding: 10px;
+        /* Adjust the padding for mobile */
+      }
+    }
+
+    /*
  *****************************************************
  * GAME
  *****************************************************
  */
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 20px;
-  overflow: hidden;
-}
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      overflow: hidden;
+    }
 
-.game-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
+    .game-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
 
-.chat-history {
-  width: 80%;
-  max-height: 60vh;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px 0;
-}
+    .chat-history {
+      width: 80%;
+      max-height: 60vh;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+    }
 
-.input-section {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background-color: #f9f9f9;
-  padding: 10px;
-  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
-}
+    .chat-item {
+      display: flex;
+      align-items: center;      
+    }
 
-.input-section input[type="text"] {
-  width: 80%;
-}
+    .chat-item:nth-child(even) {
+      background-color: #f2f2f2;
+    }
 
-.input-section button {
-  margin-left: 10px;
-}
+    .chat-item img {
+      width: 5em;
+      margin-right: 10px;
+    }
 
-button.login {
-  margin-left: 10px;
-}
+    .chat-item-text {
+      margin-left: 1em;
+      padding: 10px 0;
+    }
 
-/*
+    .input-section {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background-color: #f9f9f9;
+      padding: 10px;
+      box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-section input[type="text"] {
+      width: 80%;
+    }
+
+    .input-section button {
+      margin-left: 10px;
+    }
+
+    button.login {
+      margin-left: 10px;
+    }
+
+    /*
  *****************************************************
  * HEADER
  *****************************************************
  */
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100vw;
-  padding: 10px;
-  background-color: #f9f9f9;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100vw;
+      padding: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-.header h1 {
-  flex-grow: 1;
-  margin: 0;
-  text-align: center;
-}
+    .header h1 {
+      flex-grow: 1;
+      margin: 0;
+      text-align: center;
+    }
 
-.header button {
-  padding: 8px 16px;
-  background-color: #e74c3c;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 0 10px;
-}
+    .header button {
+      padding: 8px 16px;
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
 
-.header button.game-state-button {
-  padding: 8px 16px;
-  background-color: #2ecc71; /* New color */
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+    .header button.game-state-button {
+      padding: 8px 16px;
+      background-color: #2ecc71;
+      /* New color */
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
 
-/*
+    /*
  *****************************************************
  * SPINNER
  *****************************************************
  */
 
-.spinner {
-  width: 20px;
-  height: 20px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #3498db;
-  border-radius: 50%;
-  animation: spinner-rotate 1s linear infinite;
-}
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #3498db;
+      border-radius: 50%;
+      animation: spinner-rotate 1s linear infinite;
+    }
 
-@keyframes spinner-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+    @keyframes spinner-rotate {
+      0% {
+        transform: rotate(0deg);
+      }
 
-/*
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /*
  *****************************************************
  * POPUP
  *****************************************************
  */
 
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
 
-.popup-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-}
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
 
-.popup h2 {
-  margin-top: 0;
-}
+    .popup h2 {
+      margin-top: 0;
+    }
 
-.popup p {
-  margin-bottom: 20px;
-}
+    .popup p {
+      margin-bottom: 20px;
+    }
 
-.popup button {
-  padding: 8px 16px;
-  background-color: #e74c3c;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
+    .popup button {
+      padding: 8px 16px;
+      background-color: #e74c3c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -280,36 +304,62 @@ button.login {
       );
     };
 
+    const CHARACHERS_INIT = { "Narrator": {} };
+    const GAME_STATE_INIT = 'Empty. Invent a character to act as.';
 
     const Game = () => {
       const [apiKey, setApiKey] = useState('');
       const [chatHistory, setChatHistory] = useState([]);
+      const [characters, setCharacters] = useState(CHARACHERS_INIT);
       const [message, setMessage] = useState('');
       const [isLoading, setIsLoading] = useState(false);
-      const [gameState, setGameState] = useState('This is a brand new game. Invent an NPC character to act as.');
+      const [gameState, setGameState] = useState(GAME_STATE_INIT);
 
-      const startGame = async (apiKey) => {
-        setIsLoading(true);
-        setApiKey(apiKey);
-      };
-
+      // Save the game state to local storage on each change
       useEffect(() => {
-        // Start with NPC turn
         if (apiKey) {
-          npcTurn(chatHistory);
+          localStorage.setItem('gameState', JSON.stringify({
+            chatHistory,
+            characters,
+            gameState
+          }));
         }
-      }, [apiKey]);
+      }, [chatHistory, characters, gameState]);
 
+      // Load the game state from local storage when the component mounts
       useEffect(() => {
         const storedApiKey = localStorage.getItem('apiKey');
         if (storedApiKey) {
-          startGame(storedApiKey);
+          const storedGameState = localStorage.getItem('gameState');
+          if (storedGameState) {
+            const { chatHistory, characters, gameState } = JSON.parse(storedGameState);
+            setChatHistory(chatHistory);
+            setCharacters(characters);
+            setGameState(gameState);
+          }
+
+          setApiKey(storedApiKey);
         }
       }, []);
 
+      // When apiKey is set, save.
+      // If first turn (empty history) start with NPC
+      useEffect(() => {
+        if (apiKey) {
+          localStorage.setItem('apiKey', apiKey);
+          if (chatHistory.length === 0) {
+            npcTurn(chatHistory);
+          }
+        }
+      }, [apiKey]);
+
       const handleLogout = () => {
-        localStorage.removeItem('apiKey');
+        localStorage.removeItem('apiKey')
+        localStorage.removeItem('gameState');
         setApiKey('');
+        setChatHistory([]);
+        setCharacters(CHARACHERS_INIT);
+        setGameState(GAME_STATE_INIT);
       };
 
       const handleKeyPress = (event) => {
@@ -324,94 +374,134 @@ button.login {
           sender: 'Player',
           text: message
         };
-
-        const updatedHistory = [...chatHistory, newMessage];
-        setChatHistory(updatedHistory);
+        
         setMessage('');
 
-        await npcTurn(updatedHistory);
+        await npcTurn([...chatHistory, newMessage]);
       };
 
       const npcTurn = async (updatedHistory) => {
         setIsLoading(true);
-        try {
-          const response = await getNPCResponse(updatedHistory);
-          updatedHistory = handleNPCResponse(updatedHistory, response);
+        for (let attempt = 0; true; attempt++) {
+          try {
+            const rawResponse = await getNPCResponse(updatedHistory);
+            const response = handleNPCResponse(updatedHistory, rawResponse);
+            updatedHistory.push(response);
 
-          setGameState(await summarizeGameState(updatedHistory));
-        } catch (error) {
-          console.error("Error fetching NPC response:", error);
-        } finally {
-          setIsLoading(false);
+            // Register and get summary in parallel
+            registerCharacter(response.sender);
+            const summary = await summarizeGameState(updatedHistory);
+
+            setChatHistory(updatedHistory);
+            setGameState(summary);
+            break;
+          } catch (error) {
+            console.error("Error fetching NPC response:", error);
+            if (attempt >= 2) {
+              alert("Something went wrong. Please try again");
+              break;
+            }
+          }
         }
+        setIsLoading(false);
       };
 
-      const getRole = (sender) => {
+      const registerCharacter = async (name, description) => {
+        if (name in characters) {
+          return;
+        }
+
+        const imgUrl = await invokeDalle(`16-bit pixel art. Retro color theme. Character icon. White background. ${name}`);
+
+        setCharacters({
+          [name]: {
+            imgUrl,
+          },
+          ...characters,
+        });
+      };
+
+      const getRole = (sender, actingAs) => {
         // Customize the role determination logic here
         // For now, the default logic is used
-        return sender === "Player" ? "user" : "assistant";
+        return sender === "Player" || sender.toLowerCase() === actingAs.toLowerCase() ? "user" : "assistant";
       };
 
       const summarizeGameState = async (updatedHistory) => {
         return await invokeModel([
-            {
-              role: "system",
-              content: `
-The current summary of the game state is:
+          {
+            role: "system",
+            content: `
+The current state of the game is:
 
 ${gameState}
 
-Messages:
+Recent conversation history:
 
-` + JSON.stringify(updatedHistory.map((message) => {
+${JSON.stringify(updatedHistory)}
 
-              return {
+Update the game context to take into account the recent conversation history. Include the following sections:
 
-                role: getRole(message.sender),
+1. A list of the characters that exist in the world. Including a brief description and a summary of their goals.
+2. Any important points from the conversation
 
-                content: message.text,
+`
 
-              };
+          },
 
-})) + `
-Given the current summary and messages, reply with the next game state summary. You must include the following sections: 
-a list of the characters the player has met with a summary of the character and their goals.
-
-The players objectives. 
-
-What the player is currently doing.`
-
-            },
-
-          ]);
+        ]);
       };
 
       const getNPCResponse = async (updatedHistory) => {
-        return await invokeModel([
-            {
-              role: "system",
-              content: `
-Respond to the user as the appropriate character in the roll playing game given the chat and the current state of the game. If the user has said they are taking an action, the appropriate character to respond as is the narrator.
+        let actAs;
+        actAs = await invokeModel([
+          {
+            role: "system",
+            content: `Respond only with character names. Include no additional context. You may say "Narrator" to respond as the narrator of the game. Never respond as "Player". Prefer to respond with a character that is present in the background information. For example, respond: "Thomas the Warrior"`,
+          },
+          {
+            role: "user",
+            content: [
+              `Keep in mind this background information in your responses: ${gameState}`,
+              `Here is the recent conversation history: ${JSON.stringify(updatedHistory)}`,
+              `Who do you want to respond as?`,
+            ].join('\n\n'),
+          },
+        ], /* stop */ ["\n"]);
 
-${gameState}
-`,
-            },
-            ...updatedHistory.map((message) => {
-              return {
-                role: getRole(message.sender),
-                content: message.text,
-              };
-            }),
-          ]);
+        console.log(`Responding as ${actAs}`);
+
+        return await invokeModel([
+          {
+            role: "system",
+            content: `You are ${actAs}. Always start your response with your name followed by a colon. Keep your response brief. For example, "${actAs}: Hello there fellow adventurer!".`,
+          },
+          {
+            role: "user",
+            content: `Keep in mind this background information in your responses: ${gameState}`,
+          },
+          ...(
+            updatedHistory.length === 0
+              ? [{ role: "user", content: "I am an adventurer looking for a quest" }]
+              : updatedHistory.map((message) => {
+                return {
+                  role: getRole(message.sender, actAs),
+                  content: message.sender + ": " + message.text,
+                };
+              })
+          ),
+        ], /* stop */ ["\n"]);
       };
 
-      const invokeModel = async (messages) => {
+      const invokeModel = async (messages, stops) => {
         const requestBody = {
           model: "gpt-3.5-turbo",
-          messages: [
-            ...messages
-          ]
+          messages,
         };
+
+        if (stops) {
+          requestBody["stop"] = stops;
+        }
 
         try {
           const openaiApiKey = localStorage.getItem('apiKey');
@@ -424,39 +514,89 @@ ${gameState}
             body: JSON.stringify(requestBody)
           });
 
-          const data = await response.json();
-          return data.choices[0].message.content;
+          if (response.ok) {
+            const data = await response.json();
+            return data.choices[0].message.content;
+          } else {
+            throw new Error('Error:' + response.statusText);
+          }
         } catch (error) {
           console.error("Error fetching response:", error);
           return "";
         }
       };
 
-
-      const handleNPCResponse = (updatedHistory, response) => {
-        const npcMessage = {
-          sender: 'NPC',
-          text: response
+      const invokeDalle = async (prompt) => {
+        const apiKey = localStorage.getItem('apiKey');
+        const url = 'https://api.openai.com/v1/images/generations';
+        const headers = {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
         };
 
-        updatedHistory = [...updatedHistory, npcMessage];
-        setChatHistory(updatedHistory);
+        const requestBody = {
+          prompt,
+          n: 1,
+          size: '256x256'
+        };
 
-        return updatedHistory;
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: headers,
+          body: JSON.stringify(requestBody)
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.data && data.data.length > 0) {
+            const firstDataRow = data.data[0];
+            return firstDataRow.url;
+          }
+        }
+
+        throw new Error('Error:' + response.statusText);
+      };
+
+
+      const handleNPCResponse = (updatedHistory, response) => {
+        const nameAndResponse = response.split(":", 2);
+        if (nameAndResponse.length != 2) {
+          throw new Error("Bad response: " + response);
+        }
+
+        const splitStringAndGetSecondHalf = (inputString) => {
+          const delimiterRegex = /\b(is|am)\b/i; // Word boundary regex pattern for "is" or "am"
+          const splittedArray = inputString.split(delimiterRegex);
+
+          if (splittedArray.length === 1) {
+            return inputString;
+          }
+
+          const secondHalf = splittedArray[2] || ''; // Retrieve the second half or an empty string if not present
+          return secondHalf.trim(); // Trim any leading/trailing whitespaces
+        };
+
+        return {
+          sender: splitStringAndGetSecondHalf(nameAndResponse[0]),
+          text: nameAndResponse[1],
+        };
       };
 
       return (
         <div className="container">
           {!apiKey ? (
-            <APIKeyInput setApiKey={startGame} />
+            <APIKeyInput setApiKey={setApiKey} />
           ) : (
             <div className="game-section">
               <Header onLogout={handleLogout} gameState={gameState} />
               <div className="chat-history">
                 {chatHistory.map((message, index) => (
-                  <div key={index}>
-                    <strong>{message.sender}: </strong>
-                    {message.text}
+                  <div key={index} className="chat-item" >
+                    <div><img src={(characters[message.sender] || {}).imgUrl} /></div>
+                    <div className="chat-item-text">
+                      <strong>{message.sender}:&nbsp;</strong>
+                      {message.text}
+                    </div>
                   </div>
                 ))}
               </div>
